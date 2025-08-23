@@ -71,21 +71,21 @@ latex-python@latex-python.iam.gserviceaccount.com
 ```
 3. Change `SPREADSHEET_ID` with your sheet id
 
-#### Option 3: Use existing sheet
+#### Option 3: Use Existing Sheet
 1. Ask me for credential.
 2. See the results in `https://docs.google.com/spreadsheets/d/1kSz21B5faifZ6JYvH_2wdvosoQVhP1f1XnYEoo9olzk/`
 
 ## Project Structure
 
 ```
-├── sample1/                 # Basic PythonTeX example
-│   └── doc.tex             # Sample LaTeX document
-├── sample2/                 # Google Sheets integration 
-│   ├── doc.tex             # Sample with Google Sheets
-│   └── service_account.json # Google API credentials
-├── requirements.txt         # Python dependencies
-├── proj.ipynb               # A demonstration of openpyxl abilities 
-└── README.md               # This file
+├── sample1/                    # Basic PythonTeX example
+│   └── doc.tex                 # Sample LaTeX document
+├── sample2/                    # Google Sheets integration 
+│   ├── doc.tex                 # Sample with Google Sheets
+│   └── service_account.json    # Google API credentials
+├── requirements.txt            # Python dependencies
+├── proj.ipynb                  # A demonstration of openpyxl abilities 
+└── README.md                   # This file
 ```
 
 ## Workflow
