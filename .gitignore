@@ -1,0 +1,6 @@
+sample*/pythontex-files-doc
+sample*/doc.aux
+sample*/doc.log
+sample*/doc.pytxcode
+.venv
+sample*/service_account.json
