@@ -113,14 +113,14 @@ Result in PDF → Only shows the number `10` (not the code).
 
 ### Google Sheets Integration
 
-For Google Sheets functionality (available in sample2):
+For Google Sheets functionality (available in import_formula_to_google_sheet_and_excel):
 
 #### Option 1: Use Your Own Service Account
 
 1.  Create a Google Cloud Project
 2.  Enable Google Sheets API
 3.  Create a service account and download the JSON key
-4.  Rename credential to `service_account.json` and place it in sample2
+4.  Rename credential to `service_account.json` and place it in import_formula_to_google_sheet_and_excel
     folder
 5.  Replace `SPREADSHEET_ID` with your sheet id
 6.  In your sheet give access to your email. Note that making sheet public is not enough and direct access to sheet have to be given to associated email.
@@ -129,7 +129,7 @@ For Google Sheets functionality (available in sample2):
 #### Option 2: Share with Existing Service Account
 
 1.  Ask me for credential.
-2.  place it in sample2 folder. 
+2.  place it in import_formula_to_google_sheet_and_excel folder. 
 3.  Share your Google Sheet with the following email address:
 
 ```
@@ -142,18 +142,40 @@ latex-python@latex-python.iam.gserviceaccount.com
 #### Option 3: Use Existing Sheet
 
 1.  Ask me for credential.
-2.  place it in sample2 folder.
+2.  place it in import_formula_to_google_sheet_and_excel folder.
 3.  See the results in:
     `https://docs.google.com/spreadsheets/d/1kSz21B5faifZ6JYvH_2wdvosoQVhP1f1XnYEoo9olzk/`
 4.  execute pdf generation commands.
+
+------------------------------------------------------------------------
+### Formula Analysis
+This sample performs lexical analysis on Excel spreadsheets to identify and group formulas with similar patterns. It reads formulas from an Excel file, identifies their structure, and consolidates them into generalized pattern representations.
+
+### How It Works
+
+The analyzer processes formulas in three main steps:
+- Extraction: Reads all formulas from formula.xlsx
+- Pattern Recognition: Identifies structural similarities between formulas
+- Grouping: Consolidates formulas into pattern notation
+
+### Example
+- Input Formulas: `A1 * B4 , A2 * B5 , A3 * B6`
+- Output Pattern: `A<1-3> * B<4-6>`
+
+### Pattern Notation
+- Continuous Range: <start-end> indicates sequential values. Example: A<1-3> from A1 to A3
+- Discrete Values: <val1,val2,...> indicates non-sequential values Example: B<2,5> represents B2 and B5
 
 ## Project Structure
 
     ├── sample1/                    # Basic PythonTeX example
     │   └── doc.tex                 # Sample LaTeX document
-    ├── sample2/                    # Google Sheets integration 
+    ├── import_formula_to_google_sheet_and_excel/                    # Google Sheets integration 
     │   ├── doc.tex                 # Sample with Google Sheets
     │   └── service_account.json    # Google API credentials
+    ├── extract_formula_from_excel
+    │   ├── formula.xlsx
+    │   └── lexical_analysis_excel_formula.json
     ├── requirements.txt            # Python dependencies
     ├── proj.ipynb                  # A demonstration of openpyxl abilities 
     └── README.md                   # This file
